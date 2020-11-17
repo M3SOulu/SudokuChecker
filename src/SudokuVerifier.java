@@ -1,6 +1,9 @@
 
 public class SudokuVerifier {
 
+	//sudoku checker modified from the original code by Ibrahim Ali
+	//https://codereview.stackexchange.com/a/180840
+	
 	public static final int LENGTH = 81;
 	public static final int ROW_LENGTH = 9;
 
@@ -10,7 +13,6 @@ public class SudokuVerifier {
 		int sudokuRowSize = 0;
 		int sudokuColumnSize = 0;
 		
-		//checks candidate solution length and whether it contains only positive digits.
 		if (!lengthChecker(candidateSolution)) {
 			return -1;
 		} else {
@@ -38,7 +40,7 @@ public class SudokuVerifier {
 		}
 	}
 
-	//checks whether if any of the rules are broken (sub-grid, column, row).
+	//checks whether if any of the rules are broken (columns, rows, sub-grids).
 	private int sudokuRuleChecker(int[][] sudoku) {
 		int result = 0;
 
